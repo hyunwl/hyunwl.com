@@ -1,4 +1,4 @@
-Name: Github Actions
+name: Hugo CI
 
 on: [push]
 
