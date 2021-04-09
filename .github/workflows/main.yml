@@ -36,6 +36,7 @@ jobs:
 
   # TODO: Implement AWS CLI to sync artifact into S3 bucket
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download Hugo production build as an artifact
