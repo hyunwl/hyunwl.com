@@ -1,0 +1,18 @@
+# Directories
+/public/
+/resources/_gen/
+/node_modules/
+
+# Files
+hugo_stats.json
+
+# MacOS
+.DS_Store
+
+# Executables
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# VIM swap files
+*.swp
