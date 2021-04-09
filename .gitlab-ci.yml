@@ -1,0 +1,27 @@
+stages:
+  - build
+  - deploy
+
+#cache:
+#  paths:
+#    - node_modules/
+
+build:
+  stage: build
+  image: hyunwl/hugo-nodejs:0.1.2
+  script:
+    - hugo mod npm pack
+    - npm install
+    - hugo
+  artifacts:
+    paths:
+      - public
+
+# TODO: Implement aws-cli to sync files in public/ to S3
+deploy:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  script:
+    - echo 'AWS CLI commands here'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
