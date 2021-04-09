@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: hyunwl/hugo-nodejs:0.1.2
+      options: --user 1001
     steps:
       - uses: actions/checkout@v2
       - name: Cache node modules
