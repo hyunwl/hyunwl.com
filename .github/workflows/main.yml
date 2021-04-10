@@ -55,6 +55,6 @@ jobs:
           name: hugo-prod
       - name: Sync files to S3
         run: |
-          aws s3 sync hugo-prod ${{ secrets.AWS_S3_BUCKET }} \
+          aws s3 sync . ${{ secrets.AWS_S3_BUCKET }} \
           --acl public-read \
           --delete
