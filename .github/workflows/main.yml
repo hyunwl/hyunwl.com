@@ -1,6 +1,10 @@
 name: Hugo CI
 
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -38,7 +42,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Download Hugo production build as an artifact
         uses: actions/download-artifact@v2
