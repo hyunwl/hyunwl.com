@@ -1,6 +1,10 @@
 name: Hugo CI
 
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -34,13 +38,23 @@ jobs:
           name: hugo-prod
           path: public
 
-  # TODO: Implement AWS CLI to sync artifact into S3 bucket
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Download Hugo production build as an artifact
         uses: actions/download-artifact@v2
         with:
           name: hugo-prod
-      - run: echo "Implementation here!"
+      - name: Sync files to S3
+        run: |
+          aws s3 sync hugo-prod ${{ secrets.AWS_S3_BUCKET }} \
+          --acl public-read \
+          --delete
