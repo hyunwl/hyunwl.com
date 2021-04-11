@@ -1,4 +1,7 @@
 {
+ "scripts": {
+   "server": "hugo server -D --bind 0.0.0.0 --baseURL http://$(eval hostname -i)"
+ },
  "comments": {
   "dependencies": {},
   "devDependencies": {
