@@ -1,8 +1,12 @@
 {{ define "main" }}
-  <article class="prose lg:prose-xl">
-    <h1 class="text-4xl">
-      {{ .Title }}
-    </h1>
-    {{ .Content }}
-  </article>
+  <main class="mx-auto">
+    <article class="w-full">
+			{{ partial "heading.html" (dict "Title" "Certifications") }}
+      <div class="gap-6 w-full flex flex-wrap justify-center items-start">
+				{{ range where .Site.RegularPages.ByWeight "Type" "certification" }}
+					{{ partial "card-certification.html" . }}
+				{{ end }}
+			</div>
+    </article>
+	</main>
 {{ end }}
