@@ -1,7 +1,7 @@
 ---
 title: "AWS Solutions Architect"
 date: 2021-04-14T04:54:17-05:00
-draft: true
+draft: false
 type: "certification"
 weight: 2
 href: "https://www.credly.com/badges/924f0501-58da-42b8-83b9-d626cba28361/public_url"

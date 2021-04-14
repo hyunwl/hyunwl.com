@@ -1,7 +1,7 @@
 ---
 title: "AWS Certified Developer"
 date: 2021-04-14T06:30:24-05:00
-draft: true
+draft: false
 type: "certification"
 weight: 3
 href: "https://www.credly.com/badges/931539fb-e8a4-45a3-a676-8077f8e529f5/public_url"
