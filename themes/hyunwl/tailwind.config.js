@@ -29,5 +29,18 @@ module.exports = {
 		mode: 'all',
 		
 	},
-	plugins: [ typography ]
+	plugins: [ typography ],
+  theme: {
+    extend: {
+			colors: {
+				'primary': '#EAF2F9',
+				'secondary': '#DCE6F2',
+				'secondary-dark': '#C5D3E5',
+			},
+      boxShadow: {
+        'card': '10px 10px 20px #d3dae0',
+   			'card-component': '5px 5px 10px #c5cbd1, -5px -5px 10px #ffffff',
+      }
+    }
+  },
 };
