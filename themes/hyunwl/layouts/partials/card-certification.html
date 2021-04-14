@@ -1,0 +1,8 @@
+<div class="w-full max-w-xs m-20 shadow-card rounded-3xl bg-primary">
+	<div class="w-full h-48 rounded-t-2xl"></div>
+	<div class="p-6 flex flex-col justify-center items-center space-y-4">
+		<p class="font-bold tracking-widest leading-none text-gray-800 text-xl text-center">{{ .Title }}</p>
+    <p class="italic font-light">{{ .Description }}</p>
+		{{ partial "button-secondary.html" (dict "Title" "Verify") }}
+	</div>
+</div>
