@@ -12,6 +12,9 @@
     {{ $styles = $styles | resources.PostCSS $options }}
     {{ if  hugo.IsProduction  }}
       {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+			<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    {{ else }}
+			<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     {{ end }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
   </head>
