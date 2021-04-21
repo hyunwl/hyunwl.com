@@ -39,8 +39,13 @@ module.exports = {
 			},
       boxShadow: {
         'card': '10px 10px 20px #d3dae0',
-   			'card-component': '5px 5px 10px #c5cbd1, -5px -5px 10px #ffffff',
-      }
+   			'card-component-lg': '5px 5px 10px #c5cbd1, -5px -5px 10px #ffffff',
+   			'card-component-copy': '5px 5px 10px #BBC1C9, -5px -5px 10px #ffffff',
+   			'card-component': '4px 4px 8px #d1d6db, -4px -4px 8px #ffffff',
+      },
+      fontFamily: {
+        'header': ['Montserrat', "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+      },
     }
   },
 };

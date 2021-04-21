@@ -1,1 +1,7 @@
-<a target="_blank" rel="noopener noreferrer" href="{{ .Href }}" class="text-gray-700 rounded-full shadow-card-component px-6 py-2 font-bold uppercase tracking-widest">{{ .Title }}</a>
+{{ $iconSize := "20" }}
+<a target="_blank" rel="noopener noreferrer" href="{{ .Href }}" class="text-gray-700 rounded-xl shadow-card-component px-6 py-2 font-bold uppercase tracking-widest">
+  <div class="flex justify-center items-center gap-2">
+    {{ partial .IconPath (dict "size" $iconSize) }}
+    {{ .Title }}
+	</div>
+</a>
