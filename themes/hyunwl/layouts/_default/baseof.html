@@ -13,14 +13,17 @@
     {{ if  hugo.IsProduction  }}
       {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 			<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+			<script src="{{ .Site.BaseURL }}js/particles.min.js"></script>
+			<script src="{{ .Site.BaseURL }}js/particles.js"></script>
     {{ else }}
 			<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+			<script src="{{ .Site.BaseURL }}js/particles.min.js" defer></script>
+			<script src="{{ .Site.BaseURL }}js/particles.js" defer></script>
     {{ end }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
   </head>
   <body class="bg-gradient-to-br from-primary to-secondary-dark">
-    {{/* partial "header.html" . */}}
-    <p>Hyun Lee<br>Developer/Consultant with focus on cloud technologies, devops, and web development</p>
+    {{ partial "header.html" . }}
     <div class="border border-red-400 w-full max-w-6xl mx-auto">
       {{ block "main" . }}{{ end }}
     </div>
